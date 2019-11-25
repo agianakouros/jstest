@@ -6,7 +6,7 @@ const MAX = Number.MAX_SAFE_INTEGER;
 
 let origin = "";
 let destination = "";
-let temp = 0;
+let temp = null;
 let temp2;
 
 console.log()
@@ -19,7 +19,7 @@ while (destination !== "c" && destination !== "f" && destination !== "k") {
   destination = (readlineSync.question("Enter a destination scale: ")).toLowerCase();
 }
 
-while (temp > MAX || temp < MIN) {
+while (temp > MAX || temp < MIN || temp === null) {
   temp = (readlineSync.question("Enter a temperature: "));
   temp2 = (temp).toLocaleString("en", { minimumFractionDigits: 0, maximumFractionDigits: 1})
 }
